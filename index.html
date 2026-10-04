@@ -41,7 +41,7 @@ main.container{padding-top:28px;padding-bottom:48px}
 
 /* days */
 .days-panel{margin-top:20px}
-.days{display:grid;grid-template-columns:repeat(8,1fr);gap:14px;padding:22px}
+.days{display:grid;grid-template-columns:repeat(9,1fr);gap:12px;padding:22px}
 .day{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
 .day .cnt{font-size:18px;font-weight:600;color:var(--g900);height:26px}
 .tank{position:relative;width:100%;max-width:92px;height:170px;border:2px solid var(--g300);border-radius:10px;background:var(--g50);overflow:hidden;margin:6px 0 10px}
@@ -57,7 +57,7 @@ main.container{padding-top:28px;padding-bottom:48px}
 .status.s-live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--g500);margin-right:6px;vertical-align:1px}
 .status.s-done{background:var(--g700);color:var(--white)}
 .status.s-wait{background:#EEF1EF;color:var(--muted)}
-@media (max-width:760px){.days{grid-template-columns:repeat(4,1fr);row-gap:24px}.tank{height:130px}}
+@media (max-width:760px){.days{grid-template-columns:repeat(3,1fr);row-gap:24px}.tank{height:130px}}
 
 /* layout */
 .row{display:grid;grid-template-columns:1.7fr 1fr;gap:20px;margin-top:20px}
@@ -123,7 +123,7 @@ footer .container{padding-top:18px;padding-bottom:18px;font-size:12px;color:var(
     <div>
       <h1>Aile Festivali Sıfır Atık Vakfı Oyun Alanı</h1>
     </div>
-    <div class="meta"><strong>26 Eylül – 5 Ekim 2026</strong><span id="range"></span></div>
+    <div class="meta"><strong>26 Eylül – 6 Ekim 2026</strong><span id="range"></span></div>
   </div>
 </header>
 
@@ -131,7 +131,7 @@ footer .container{padding-top:18px;padding-bottom:18px;font-size:12px;color:var(
   <section class="panel kpis" id="kpis" aria-label="Özet göstergeler"></section>
 
   <section class="panel days-panel">
-    <div class="panel-head"><h2>Günlük oyuncu dağılımı</h2><p class="foot" style="margin:0">8 günlük festival takvimi</p></div>
+    <div class="panel-head"><h2>Günlük oyuncu dağılımı</h2><p class="foot" style="margin:0">9 günlük festival takvimi</p></div>
     <div class="days" id="days"></div>
   </section>
 
@@ -205,7 +205,7 @@ document.getElementById("kpis").innerHTML =
   kpi("En yoğun saat", `${hours[peak]}:00`, `${tot[peak]} oyuncu`);
 
 // Daily tanks (8 days, Istanbul time)
-const FESTIVAL_GUNLERI=["2026-09-26","2026-09-27","2026-09-30","2026-10-01","2026-10-02","2026-10-03","2026-10-04","2026-10-05"]; // 28-29 Eylül festival yapılmadı
+const FESTIVAL_GUNLERI=["2026-09-26","2026-09-27","2026-09-30","2026-10-01","2026-10-02","2026-10-03","2026-10-04","2026-10-05","2026-10-06"]; // 28-29 Eylül festival yapılmadı
 const GUN_SAYISI=FESTIVAL_GUNLERI.length;
 const GUNLUK_HEDEF=0; // 0 = en kalabalık güne göre ölçekle; bir sayı yazılırsa doluluk bu hedefe göre hesaplanır
 function addDays(iso,n){const [y,m,d]=iso.split("-").map(Number);const x=new Date(Date.UTC(y,m-1,d+n));return x.toISOString().slice(0,10);}
